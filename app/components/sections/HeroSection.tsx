@@ -16,8 +16,8 @@ export function HeroSection() {
           <h1>Yash Patel</h1>
           <TypingRole />
           <p className="desc">
-            React Native Developer with 2.5 years of experience shipping production mobile
-            applications, real-time features, and companion web platforms with React.js and Next.js.
+            Frontend Developer with 2.5 years of experience building polished React, Next.js,
+            and React Native experiences backed by real-time features and production APIs.
           </p>
           <div className="hero-ctas">
             <a href="#projects" className="btn btn-primary">

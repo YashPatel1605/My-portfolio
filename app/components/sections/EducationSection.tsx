@@ -12,6 +12,7 @@ export function EducationSection() {
           </div>
           <div>
             <h3>{education.degree}</h3>
+            <div className="school">{education.college}</div>
             <div className="school">{education.school}</div>
             <div className="period">
               {education.period} - CGPA: {education.cgpa}

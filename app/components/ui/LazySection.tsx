@@ -38,7 +38,15 @@ export function LazySection({ component: Component, minHeight = 420 }: LazySecti
       className={`lazy-section ${visible ? "lazy-section-ready" : ""}`}
       style={{ minHeight: visible ? undefined : minHeight }}
     >
-      {visible ? <Component /> : <div className="section-loader" aria-hidden="true" />}
+      {visible ? (
+        <Component />
+      ) : (
+        <div className="section-loader" role="status" aria-label="Loading portfolio section">
+          <span />
+          <span />
+          <span />
+        </div>
+      )}
     </div>
   );
 }

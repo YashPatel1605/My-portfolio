@@ -13,7 +13,7 @@ export default function Home() {
     knowsAbout: skills.flatMap((group) => group.items),
     hasOccupation: {
       "@type": "Occupation",
-      name: "React Native Developer",
+      name: "Frontend Developer",
       skills: skills.flatMap((group) => group.items).join(", "),
     },
     mainEntityOfPage: {

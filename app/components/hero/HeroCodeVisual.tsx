@@ -138,11 +138,23 @@ export function HeroCodeVisual() {
 			</div>
 			<div className="video-chip video-chip-firebase">
 				<span className="chip-square firebase-square" />
-				Firebase
+				React / Next.js
 			</div>
 			<div className="video-chip video-chip-node">
 				<span className="chip-square node-square" />
 				Node.js
+			</div>
+			<div className="video-chip video-chip-next">
+				<span className="chip-square next-square" />
+				N8n
+			</div>
+			<div className="video-chip video-chip-backend">
+				<span className="chip-square backend-square" />
+				Backend APIs
+			</div>
+			<div className="video-chip video-chip-strapi">
+				<span className="chip-square strapi-square" />
+				Strapi
 			</div>
 
 			<div className="video-stat video-stat-years">
@@ -151,7 +163,7 @@ export function HeroCodeVisual() {
 			</div>
 			<div className="video-stat video-stat-apps">
 				<strong>6+</strong>
-				<span>Production Apps</span>
+				<span>Production Apps & Website</span>
 			</div>
 
 			<div className="video-terminal">

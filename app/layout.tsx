@@ -4,13 +4,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yashpatel.dev"),
   title: {
-    default: "Yash Patel | React Native Developer",
+    default: "Yash Patel | Frontend Developer",
     template: "%s | Yash Patel",
   },
   description:
-    "Yash Patel is a React Native Developer building production mobile and web applications with Firebase, Socket.io, Next.js, live location tracking, chat, push notifications, and n8n automation.",
+    "Yash Patel is a Frontend Developer building modern React, Next.js, and React Native applications with Firebase, Socket.io, live location tracking, chat, push notifications, and n8n automation.",
   keywords: [
     "Yash Patel",
+    "Frontend Developer",
     "React Native Developer",
     "Mobile App Developer",
     "Next.js Developer",
@@ -26,17 +27,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Yash Patel | React Native Developer",
+    title: "Yash Patel | Frontend Developer",
     description:
-      "Production-ready React Native, React.js, Next.js, Firebase, Socket.io, and n8n automation work across safety, community, and social-impact apps.",
+      "Modern React, Next.js, React Native, Firebase, Socket.io, and n8n automation work across safety, community, and social-impact apps.",
     siteName: "Yash Patel Portfolio",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yash Patel | React Native Developer",
+    title: "Yash Patel | Frontend Developer",
     description:
-      "React Native Developer with 2.5 years of experience shipping production mobile and web applications.",
+      "Frontend Developer with 2.5 years of experience shipping polished web and mobile applications.",
   },
   robots: {
     index: true,

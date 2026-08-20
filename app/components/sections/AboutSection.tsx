@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { highlights } from '../../data/portfolio'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -21,21 +22,36 @@ export function AboutSection() {
 				<div className="about-grid">
 					<div className="about-visual reveal">
 						<div className="about-ring" />
-						<div className="about-core">
-							<div className="yp">YP</div>
-							<div className="tag">FULL.STACK</div>
+						<div className="about-core about-photo-card">
+							<Image
+								src="/assets/yash_Image.jpeg"
+								alt="Yash Patel"
+								width={3072}
+								height={4096}
+								sizes="(max-width: 960px) 78vw, 360px"
+								className="about-photo"
+							/>
+							<div className="about-photo-shade" />
+							{/* <div className="about-photo-caption">
+								<span>Frontend Developer</span>
+								<strong>React | Next.js | UI</strong>
+							</div> */}
 						</div>
-						<div className="about-glyph g1">{'{ }'}</div>
+						{/* <div className="about-glyph g1">{'{ }'}</div>
 						<div className="about-glyph g2">RN</div>
-						<div className="about-glyph g3">n8n</div>
+						<div className="about-glyph g3">n8n</div> */}
 					</div>
 
 					<div className="about-copy reveal reveal-delay-1">
 						<SectionHeading tag="// About Me" title="I build apps that keep moving after launch." />
 						<p>
-							I am a <strong>React Native, web, backend, and automation developer</strong> with
-							2.5 years of experience building production-ready mobile applications, web platforms,
-							APIs, and workflow automations.
+							I am a{' '}
+							<strong>
+								Web / Mobile Application Developer with 2.5 years of experience in React Native,
+								React.js, Next.js, backend development, and automation
+							</strong>
+							, building production-ready mobile applications, web platforms, APIs, and workflow
+							automations.
 						</p>
 						<p>
 							My work covers React Native mobile apps, React.js and Next.js web applications,

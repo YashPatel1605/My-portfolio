@@ -3,10 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 
 const roles = [
+  "Frontend Developer",
+  "React.js / Next.js Developer",
   "React Native Developer",
-  "Web Application Developer",
-  "Web / Mobile Application Developer",
-  "Backend Developer",
+  "UI-Focused Web Developer",
   "N8n Workflow Automation Designer",
 ];
 

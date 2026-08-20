@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { profile } from "../../data/portfolio";
 
 const navItems = [
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -15,6 +16,7 @@ const navItems = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -28,6 +30,36 @@ export function Header() {
     return () => document.body.classList.remove("modal-locked");
   }, [open]);
 
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.href.slice(1));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    if (!sections.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry?.target.id) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: "-28% 0px -58% 0px",
+        threshold: [0.08, 0.18, 0.32, 0.48],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header className={scrolled ? "scrolled" : ""} id="siteHeader">
       <div className="wrap nav-inner">
@@ -36,7 +68,11 @@ export function Header() {
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a className="nav-link" href={item.href} key={item.href}>
+            <a
+              className={`nav-link ${activeSection === item.href.slice(1) ? "active" : ""}`}
+              href={item.href}
+              key={item.href}
+            >
               {item.label}
             </a>
           ))}
@@ -61,7 +97,12 @@ export function Header() {
       </div>
       <div className={`mobile-menu ${open ? "open" : ""}`} aria-hidden={!open}>
         {navItems.map((item) => (
-          <a className="mob-link" href={item.href} key={item.href} onClick={() => setOpen(false)}>
+          <a
+            className={`mob-link ${activeSection === item.href.slice(1) ? "active" : ""}`}
+            href={item.href}
+            key={item.href}
+            onClick={() => setOpen(false)}
+          >
             {item.label}
           </a>
         ))}
