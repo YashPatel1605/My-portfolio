@@ -2,6 +2,7 @@ import { Download, Mail, MousePointer2 } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "../icons/SocialIcons";
 import { HeroCodeVisual } from "../hero/HeroCodeVisual";
 import { profile } from "../../data/portfolio";
+import { TypingRole } from "../ui/TypingRole";
 
 export function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export function HeroSection() {
             Available for new opportunities
           </div>
           <h1>Yash Patel</h1>
-          <div className="role">React Native & Web Developer</div>
+          <TypingRole />
           <p className="desc">
             React Native Developer with 2.5 years of experience shipping production mobile
             applications, real-time features, and companion web platforms with React.js and Next.js.
@@ -32,12 +33,24 @@ export function HeroSection() {
             <a className="social-btn" href="mailto:patelyash9712@gmail.com" aria-label="Email Yash">
               <Mail size={18} />
             </a>
-            <span className="social-btn" aria-label="LinkedIn profile">
+            <a
+              className="social-btn"
+              href={profile.linkedInHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+            >
               <LinkedInIcon />
-            </span>
-            <span className="social-btn" aria-label="GitHub profile">
+            </a>
+            <a
+              className="social-btn"
+              href={profile.githubHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+            >
               <GitHubIcon />
-            </span>
+            </a>
           </div>
         </div>
 

@@ -16,16 +16,18 @@ import {
 export const profile = {
   name: "Yash Patel",
   role: "React Native Developer",
-  headline: "Web & Mobile Application Development",
+  headline: "Mobile, Web, Backend & Workflow Automation",
   email: "patelyash9712@gmail.com",
   phone: "+91 7041099374",
   phoneHref: "tel:+917041099374",
+  githubHref: "https://github.com/YashPatel1605",
+  linkedInHref: "https://www.linkedin.com/in/yash1605",
   resumeHref: "/assets/yash-patel-resume.pdf",
   videoHref: "/assets/react-native-developer-video.mp4",
   summary:
-    "React Native Developer with 2.5 years of experience shipping 6+ production mobile applications across safety, community, and social-impact domains. I specialize in real-time features, live location tracking, push notifications, chat, Firebase, WebSocket/Socket.io, React.js, Next.js, and n8n automation.",
+    "React Native, web, backend, and automation developer with 2.5 years of experience shipping production mobile applications, web platforms, APIs, and n8n workflows. I specialize in real-time features, live location tracking, push notifications, chat, Firebase, MongoDB, WebSocket/Socket.io, React.js, Next.js, Node.js, Express.js, and API integrations.",
   shortSummary:
-    "I build production-ready mobile and web applications with real-time features, scalable UI, Firebase workflows, and automation that helps teams move faster.",
+    "I build production-ready mobile apps, web applications, backend APIs, Firebase systems, and n8n automations that help teams move faster.",
 };
 
 export const highlights = [
@@ -39,12 +41,12 @@ export const skills = [
   {
     title: "Mobile & Web",
     icon: Smartphone,
-    items: ["React Native", "React.js", "Next.js", "Redux", "HTML", "CSS"],
+    items: ["React Native", "React.js", "Next.js", "Redux", "HTML", "CSS", "Tailwind CSS", "Bootstrap"],
   },
   {
     title: "Backend & APIs",
     icon: Database,
-    items: ["Node.js", "Express.js", "REST APIs", "CRUD", "Authentication", "Routing"],
+    items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "CRUD", "Authentication", "Routing"],
   },
   {
     title: "Realtime Systems",
@@ -54,7 +56,7 @@ export const skills = [
   {
     title: "Tools & Automation",
     icon: Workflow,
-    items: ["n8n", "Strapi", "Git", "GitHub", "Tailwind CSS", "Bootstrap"],
+    items: ["n8n", "Workflow Automation", "API Integration", "Strapi", "Git", "GitHub"],
   },
   {
     title: "Languages",
@@ -64,21 +66,37 @@ export const skills = [
   {
     title: "Applied AI",
     icon: Bot,
-    items: ["LangChain", "Workflow Automation", "API Integration"],
+    items: ["LangChain", "Automation Logic", "API Orchestration"],
   },
 ];
 
-export const experience = {
-  company: "Shiv Shakti Softech",
-  title: "Web/Mobile Application Developer",
-  period: "Jan 2024 - August 2026",
-  points: [
-    "Built and shipped 6+ cross-platform mobile and web applications using React Native, React.js, and Next.js across e-commerce, community, and social-impact domains, serving 1,000+ end users.",
-    "Engineered real-time push notification and chat systems using Firebase and WebSocket/Socket.io across 3 production apps.",
-    "Built continuous background location tracking with Firebase Realtime Database and Background Geolocation Tracker, delivering live updates to an admin dashboard at 6-second intervals.",
-    "Designed 5+ n8n automation workflows integrated with push notification triggers to automate business processes and improve user engagement.",
-  ],
-};
+export const experiences = [
+  {
+    company: "Shiv Shakti Softech",
+    location: "",
+    title: "Web/Mobile Application Developer",
+    type: "Full-time",
+    period: "Jan 2024 - August 2026",
+    points: [
+      "Built and shipped 6+ cross-platform mobile and web applications using React Native, React.js, and Next.js across e-commerce, community, and social-impact domains, serving 1,000+ end users.",
+      "Engineered real-time push notification and chat systems using Firebase and WebSocket/Socket.io across 3 production apps.",
+      "Built continuous background location tracking with Firebase Realtime Database and Background Geolocation Tracker, delivering live updates to an admin dashboard at 6-second intervals.",
+      "Designed 5+ n8n automation workflows integrated with push notification triggers to automate business processes and improve user engagement.",
+    ],
+  },
+  {
+    company: "Scale Tech Solutions Pvt. Ltd.",
+    location: "Ahmedabad",
+    title: "College Internship - Training",
+    type: "Internship",
+    period: "July 2023 - Nov 2023",
+    points: [
+      "Used JavaScript libraries and frameworks to improve application functionality and user experience.",
+      "Worked with Visual Studio Code as the primary IDE for coding, debugging, and project management.",
+      "Used Git and GitHub for version control, codebase integrity, and collaborative development with team members.",
+    ],
+  },
+];
 
 export type Project = {
   name: string;

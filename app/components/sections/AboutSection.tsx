@@ -2,12 +2,16 @@ import { highlights } from '../../data/portfolio'
 import { SectionHeading } from '../ui/SectionHeading'
 
 const facts = [
-	'React Native & React.js',
-	'Firebase Realtime Database',
-	'WebSocket / Socket.io',
-	'n8n workflow automation',
-	'Next.js web platforms',
+	'JavaScript & TypeScript',
+	'React Native mobile apps',
+	'React.js & Next.js web apps',
+	'Node.js & Express.js backends',
+	'MongoDB, Firebase RTDB & Firestore',
+	'REST APIs, auth, routing & CRUD',
+	'Push notifications & realtime chat',
+	'n8n workflow automation & API integration',
 	'Strapi headless CMS',
+	'Git & GitHub',
 ]
 
 export function AboutSection() {
@@ -19,23 +23,29 @@ export function AboutSection() {
 						<div className="about-ring" />
 						<div className="about-core">
 							<div className="yp">YP</div>
-							<div className="tag">MOBILE.DEV</div>
+							<div className="tag">FULL.STACK</div>
 						</div>
 						<div className="about-glyph g1">{'{ }'}</div>
 						<div className="about-glyph g2">RN</div>
-						<div className="about-glyph g3">API</div>
+						<div className="about-glyph g3">n8n</div>
 					</div>
 
 					<div className="about-copy reveal reveal-delay-1">
 						<SectionHeading tag="// About Me" title="I build apps that keep moving after launch." />
 						<p>
-							I am a <strong>React Native Developer</strong> with 2.5 years of experience shipping
-							6+ production mobile applications across safety, community, and social-impact domains.
+							I am a <strong>React Native, web, backend, and automation developer</strong> with
+							2.5 years of experience building production-ready mobile applications, web platforms,
+							APIs, and workflow automations.
 						</p>
 						<p>
-							My work focuses on real-time features like live location tracking, push notifications,
-							and chat using Firebase and WebSocket/Socket.io. I also build companion web platforms
-							with React.js and Next.js, plus backend workflow automation with n8n.
+							My work covers React Native mobile apps, React.js and Next.js web applications,
+							Node.js and Express.js backends, MongoDB and Firebase databases, plus n8n workflow
+							automation for API integrations and business processes.
+						</p>
+						<p>
+							I enjoy building practical product features like authentication, routing, CRUD flows,
+							push notifications, realtime chat, live data updates, headless CMS integrations with
+							Strapi, and clean UI systems with Tailwind CSS or Bootstrap.
 						</p>
 						<ul className="about-list">
 							{facts.map((fact) => (

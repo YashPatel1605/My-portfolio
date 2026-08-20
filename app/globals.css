@@ -414,6 +414,23 @@ h4 {
 	font-weight: 700;
 }
 
+.typing-role {
+	display: inline-flex;
+	align-items: center;
+	min-height: 1.35em;
+	transition:
+		opacity 0.3s var(--ease),
+		transform 0.3s var(--ease);
+}
+
+.typing-role-caret {
+	width: 2px;
+	height: 1.05em;
+	margin-left: 4px;
+	background: var(--accent-2);
+	animation: blink 0.85s steps(1) infinite;
+}
+
 .hero p.desc {
 	max-width: 520px;
 	margin-top: 22px;
@@ -615,8 +632,8 @@ h4 {
 	vertical-align: -4px;
 	opacity: 0;
 	animation:
-		cursorAppear 0.01s linear 4.22s forwards,
-		blink 0.85s steps(1) 4.22s infinite;
+		cursorAppear 0.01s linear var(--cursor-delay) forwards,
+		blink 0.85s steps(1) var(--cursor-delay) infinite;
 }
 
 @keyframes typeCode {
@@ -736,7 +753,7 @@ h4 {
 
 .video-stat-apps {
 	left: -3%;
-	bottom: -10%;
+	bottom: -12%;
 }
 
 .section-head {
@@ -1123,10 +1140,19 @@ form,
 	background: var(--border-strong);
 }
 
+.timeline-item {
+	position: relative;
+	margin-bottom: 26px;
+}
+
+.timeline-item:last-child {
+	margin-bottom: 0;
+}
+
 .timeline-dot {
 	position: absolute;
 	top: 18px;
-	left: 3px;
+	left: -41px;
 	width: 15px;
 	height: 15px;
 	border-radius: 50%;
@@ -1136,6 +1162,18 @@ form,
 
 .timeline-card {
 	padding: 28px;
+}
+
+.timeline-type {
+	display: inline-flex;
+	margin-bottom: 8px;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 5px 10px;
+	color: var(--accent);
+	font-family: 'Courier New', monospace;
+	font-size: 12px;
+	font-weight: 800;
 }
 
 .timeline-head {
@@ -1152,6 +1190,11 @@ form,
 .company {
 	color: var(--accent);
 	font-weight: 700;
+}
+
+.company span {
+	color: var(--text-2);
+	font-weight: 600;
 }
 
 .period,
@@ -1342,11 +1385,19 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 22px;
 	color: var(--text-2);
 	font-size: 14px;
 }
 
-.back-top {
+.footer-socials {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.footer-socials a,
+.floating-top {
 	width: 40px;
 	height: 40px;
 	display: grid;
@@ -1354,11 +1405,42 @@ footer {
 	border: 1px solid var(--border-strong);
 	border-radius: 50%;
 	color: var(--text-1);
+	transition:
+		opacity 0.32s var(--ease),
+		transform 0.32s var(--ease),
+		border-color 0.32s var(--ease),
+		color 0.32s var(--ease),
+		background 0.32s var(--ease);
 }
 
-.back-top:hover {
+.footer-socials a:hover,
+.floating-top:hover {
 	border-color: var(--accent);
 	color: var(--accent);
+}
+
+.floating-top {
+	position: fixed;
+	right: clamp(18px, 3vw, 34px);
+	bottom: clamp(18px, 3vw, 34px);
+	z-index: 120;
+	background: rgba(16, 18, 24, 0.82);
+	backdrop-filter: blur(14px) saturate(140%);
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(14px) scale(0.92);
+}
+
+.floating-top.show {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0) scale(1);
+}
+
+.floating-top:hover {
+	background: var(--accent-soft);
+	transform: translateY(-3px) scale(1);
 }
 
 .modal-overlay {
@@ -1464,6 +1546,40 @@ footer {
 
 .reveal-delay-2 {
 	animation-delay: 0.16s;
+}
+
+.lazy-section {
+	position: relative;
+	opacity: 0.01;
+	transform: translateY(18px);
+	transition:
+		opacity 0.72s var(--ease),
+		transform 0.72s var(--ease),
+		min-height 0.45s var(--ease);
+}
+
+.lazy-section-ready {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.section-loader {
+	position: absolute;
+	inset: 120px auto auto 50%;
+	width: 44px;
+	height: 44px;
+	border: 1px solid var(--border-strong);
+	border-top-color: var(--accent);
+	border-radius: 50%;
+	opacity: 0.42;
+	transform: translateX(-50%);
+	animation: sectionLoaderSpin 0.9s linear infinite;
+}
+
+@keyframes sectionLoaderSpin {
+	to {
+		transform: translateX(-50%) rotate(360deg);
+	}
 }
 
 @keyframes reveal {
@@ -1658,6 +1774,7 @@ footer {
 	.footer-inner {
 		flex-direction: column;
 		gap: 18px;
+		text-align: center;
 	}
 }
 

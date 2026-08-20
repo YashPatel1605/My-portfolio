@@ -59,14 +59,14 @@ export function ContactSection() {
               <div className="ic"><Phone size={16} /></div>
               <div className="v"><strong>Phone</strong>{profile.phone}</div>
             </a>
-            <div className="contact-row">
+            <a className="contact-row" href={profile.linkedInHref} target="_blank" rel="noreferrer">
               <div className="ic"><LinkedInIcon /></div>
-              <div className="v"><strong>LinkedIn</strong>LinkedIn profile</div>
-            </div>
-            <div className="contact-row">
+              <div className="v"><strong>LinkedIn</strong>linkedin.com/in/yash1605</div>
+            </a>
+            <a className="contact-row" href={profile.githubHref} target="_blank" rel="noreferrer">
               <div className="ic"><GitHubIcon /></div>
-              <div className="v"><strong>GitHub</strong>GitHub profile</div>
-            </div>
+              <div className="v"><strong>GitHub</strong>github.com/YashPatel1605</div>
+            </a>
           </div>
         </div>
       </div>

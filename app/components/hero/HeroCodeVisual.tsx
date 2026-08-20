@@ -110,13 +110,18 @@ const codeLines: CodeLine[] = [
 	},
 ]
 
+const lineDelayMs = 450
+const lineTypingMs = 620
+const resetPauseMs = 8000
+const typingDurationMs = (codeLines.length - 1) * lineDelayMs + lineTypingMs
+
 export function HeroCodeVisual() {
 	const [typingKey, setTypingKey] = useState(0)
 
 	useEffect(() => {
 		const interval = window.setInterval(() => {
 			setTypingKey((value) => value + 1)
-		}, 5000)
+		}, typingDurationMs + resetPauseMs)
 
 		return () => window.clearInterval(interval)
 	}, [])
@@ -165,14 +170,17 @@ export function HeroCodeVisual() {
 								style={
 									{
 										'--chars': line.chars,
-										'--delay': `${index * 0.45}s`,
+										'--delay': `${(index * lineDelayMs) / 1000}s`,
 									} as CSSProperties
 								}
 							>
 								{line.content}
 							</div>
 						))}
-						<span className="video-cursor" />
+						<span
+							className="video-cursor"
+							style={{ '--cursor-delay': `${typingDurationMs / 1000}s` } as CSSProperties}
+						/>
 					</div>
 				</div>
 			</div>
