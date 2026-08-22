@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { highlights } from '../../data/portfolio'
 import { SectionHeading } from '../ui/SectionHeading'
 
 const facts = [
@@ -17,7 +16,7 @@ const facts = [
 
 export function AboutSection() {
 	return (
-		<section id="about">
+		<section id="about" className="about-section about-section-compact">
 			<div className="wrap">
 				<div className="about-grid">
 					<div className="about-visual reveal">
@@ -43,11 +42,15 @@ export function AboutSection() {
 					</div>
 
 					<div className="about-copy reveal reveal-delay-1">
-						<SectionHeading tag="// About Me" title="I build apps that keep moving after launch." />
+						<SectionHeading
+							tag="Web + Mobile Developer"
+							title="I build products people use on every screen."
+							copy="Web platforms and mobile apps — backend included, built to last past launch."
+						/>
 						<p>
 							I am a{' '}
 							<strong>
-								Web / Mobile Application Developer with 2.5 years of experience in React Native,
+								Web and Mobile Application Developer with 2.5 years of experience in React Native,
 								React.js, Next.js, backend development, and automation
 							</strong>
 							, building production-ready mobile applications, web platforms, APIs, and workflow
@@ -69,15 +72,6 @@ export function AboutSection() {
 							))}
 						</ul>
 					</div>
-				</div>
-
-				<div className="stats-row">
-					{highlights.map((item) => (
-						<div className="stat-card reveal" key={item.label}>
-							<div className="n">{item.value}</div>
-							<div className="l">{item.label}</div>
-						</div>
-					))}
 				</div>
 			</div>
 		</section>
